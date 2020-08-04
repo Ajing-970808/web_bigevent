@@ -1,6 +1,12 @@
+// 设置路径(测试)
+var baseURL = 'http://ajax.frontend.itheima.net';
+// 设置路径(生产)
+// var baseURL = 'http://www.itcastcn';
+
+
 // 拦截 / 过滤 每次请求， 配置每次请求需要的参数
 $.ajaxPrefilter(function (options) {
-    options.url = 'http://ajax.frontend.itheima.net' + options.url;
+    options.url = baseURL + options.url;
     // 统一为有权限的接口设置headers请求头
     // url里面包含/my需要加headers
     if (options.url.indexOf('/my') !== -1) {
